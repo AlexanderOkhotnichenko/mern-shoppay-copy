@@ -24,7 +24,7 @@ export function Featureds() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const responsive = await axios.get('/api/products');
+        const responsive = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/products`);
         setProducts(responsive.data);
       } catch (error) {
         setError(true);

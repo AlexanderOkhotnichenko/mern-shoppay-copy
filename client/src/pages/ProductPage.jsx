@@ -12,7 +12,7 @@ export function ProductPage() {
   const [loading, setLoading] = useState(true);
   const breakpoint = 770;
 
-  const { data } = useFetch("/api/products");
+  const { data } = useFetch(`${import.meta.env.VITE_BACKEND_URL}/api/products`);
   const [width] = useSizeWindow();
 
   useEffect(() => {

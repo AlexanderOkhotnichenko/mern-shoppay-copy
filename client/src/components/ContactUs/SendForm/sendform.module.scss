@@ -1,0 +1,122 @@
+.send_form {
+  @apply relative min-h-screen-80;
+  &__content {
+    @apply flex items-center justify-center py-10 px-5 h-full;
+  }
+}
+
+.form {
+  @apply bg-white rounded-md py-12 px-10 w-full max-w-xl shadow-auth;
+  &__title {
+    @apply relative text-purple-custom mx-auto font-bold text-center mb-11;
+    font-size: max(1.5rem, min(5vw, 2rem));
+    line-height: max(2.25rem, min(5vw, 2.875rem));
+    &::before {
+      @apply content-[''] w-20 h-1 rounded-xl bg-purple-custom block absolute -bottom-1 left-1/2 -translate-x-1/2;
+    }
+  }
+  &__line {
+    @apply flex gap-5 mb-5;
+    .form__row:first-child {
+      @apply mb-0;
+    }
+  }
+  &__row {
+    @apply block;
+    &:not(:last-child) {
+      @apply mb-5;
+    }
+  }
+  .label {
+    @apply relative flex items-center gap-5 border-white-custom bg-white-custom py-18 px-4 rounded-md;
+    &.error {
+      @apply border border-error;
+    }
+    .icon {
+      @apply text-light-gray-custom min-w-6 min-h-6;
+    }
+    .input {
+      @apply block w-full text-light-gray-custom outline-none bg-white-custom;
+      font-size: max(1rem, min(3.5vw, 1.125rem));
+      line-height: max(1.5rem, min(3.5vw, 1.75rem));
+      &.phone {
+        @apply bg-white rounded;
+      }
+    }
+    .dropdown_button {
+      @apply bg-white;
+    }
+    .dropdown li span {
+      @apply text-stone-700;
+      &:last-child {
+        @apply text-stone-500;
+      }
+    }
+    .search {
+      @apply w-full bg-white-custom px-1.5;
+      input {
+        @apply w-full text-light-gray-custom m-0;
+      }
+    }
+    .message {
+      @apply w-full resize-none text-light-gray-custom;
+      font-size: max(1rem, min(4vw, 1.125rem));
+      line-height: max(1.5rem, min(4vw, 1.75rem));
+      background: none;
+    }
+  }
+  .error_message {
+    @apply block text-error w-full font-medium;
+    font-size: max(0.875rem, min(4vw, 1rem));
+    line-height: max(1.25rem, min(4vw, 1.75rem));
+  }
+}
+
+.submit {
+  @apply mx-auto max-w-xs mt-10 w-full flex justify-center font-semibold text-white rounded py-2 px-10 duration-150 cursor-pointer bg-purple-custom;
+  font-size: max(1rem, min(4vw, 1.125rem));
+  line-height: max(1.5rem, min(4vw, 1.75rem));
+  &:hover {
+    @apply bg-hover-purple-custom;
+  }
+  &:disabled {
+    @apply opacity-70 cursor-auto;
+    &:hover {
+      @apply bg-purple-custom #{!important};
+    }
+  }
+  .loading {
+    @apply w-7 h-7;
+  }
+}
+
+button[type="submit"] {
+  @apply bg-purple-custom;
+}
+
+@media screen and (max-width: 561px) {
+  .form__line {
+    @apply flex-col;
+  }
+}
+
+@media screen and (max-width: 471px) {
+  .send_form__content {
+    @apply px-3;
+  }
+  .form {
+    @apply py-5 px-4;
+    &__title {
+      @apply mb-7;
+    }
+    .label {
+      @apply py-4 px-3 gap-3;
+      .icon {
+        @apply min-w-1.25 min-h-1.25;
+      }
+    }
+    .error_message {
+      @apply text-sm;
+    }
+  }
+}

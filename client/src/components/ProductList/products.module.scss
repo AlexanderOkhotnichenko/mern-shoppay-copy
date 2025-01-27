@@ -1,0 +1,33 @@
+.product_list {
+  @apply flex-1 relative mx-auto w-full;
+  &.overlay::before {
+    @apply content-[''] absolute inset-0 bg-lock-gray z-10;
+  }
+  &__content {
+    @apply grid grid-cols-4 gap-10 p-6 pt-3 w-full;
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .product_list__content {
+    @apply gap-6;
+  }
+}
+
+@media screen and (max-width: 971px) {
+  .product_list__content {
+    @apply grid-cols-3;
+  }
+}
+
+@media screen and (max-width: 491px) {
+  .product_list__content {
+    @apply grid-cols-2;
+  }
+}
+
+@media screen and (max-width: 471px) {
+  .product_list__content {
+    @apply px-3 pt-2;
+  }
+}

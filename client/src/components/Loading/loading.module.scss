@@ -1,0 +1,12 @@
+.container {
+  @apply w-full h-screen-80 flex justify-center items-center;
+  .loading {
+    @apply w-1/6 h-1/6;
+  }
+}
+
+@media screen and (max-width: 471px) {
+  .container .loading {
+    @apply w-1/4 h-1/4;
+  }
+}

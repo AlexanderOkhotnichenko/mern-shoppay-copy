@@ -1,0 +1,21 @@
+.payments {
+  @apply relative pt-10;
+  &__content {
+    @apply flex gap-10;
+  }
+}
+
+@media screen and (max-width: 471px) {
+  .payments {
+    @apply pt-8;
+    &__content {
+      @apply gap-6;
+    }
+  }
+}
+
+@media screen and (max-width: 351px) {
+  .payments__content {
+    @apply flex-col gap-3;
+  }
+}

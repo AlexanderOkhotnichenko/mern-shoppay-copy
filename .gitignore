@@ -17,7 +17,6 @@ client/.env
 
 dist-ssr
 *.local
-.gitignore
 
 # Editor directories and files
 .vscode/*
